@@ -21,7 +21,12 @@ public class formServlet extends HttpServlet {
             PrintWriter writer = response.getWriter();
 
             String name = request.getParameter("p1");
-
+            if (name==""){
+                String path="https://iba.by/";
+                response.sendRedirect(path);
+               // или одной строкой response.sendRedirect("https://iba.by/");
+            }
+            else {
 
             try {
                 writer.println("<p>Ваше имя: " + name + "</p>");
@@ -29,7 +34,10 @@ public class formServlet extends HttpServlet {
             } finally {
                 writer.close();
             }
-        }
+        }}
+
+    @Override
+
 
     public void destroy() {
     }
