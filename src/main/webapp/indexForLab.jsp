@@ -24,15 +24,15 @@
     LocalTime day=LocalTime.parse("12:00");
     LocalTime evening=LocalTime.parse("18:00");
     LocalTime night=LocalTime.parse("21:00");
-    Boolean isMorning=LocalTime.now().isAfter(morning);
+    String resultTime=now.format(DateTimeFormatter.ofPattern("HH:mm"));
     if (now.isAfter(morning)&&now.isBefore(day))
-        out.println("<h2>Доброе утро, Яна. Сейчас "+now.format(DateTimeFormatter.ofPattern("HH:mm")));
+        out.println("<h2>Доброе утро, Яна, сейчас "+resultTime);
     else if(now.isAfter(day)&& now.isBefore(evening))
-        out.println("<h2>Добрый день, Яна. Сейчас "+now.format(DateTimeFormatter.ofPattern("HH:mm")));
+        out.println("<h2>Добрый день, Яна, сейчас "+resultTime);
     else if(now.isAfter(evening)&& now.isBefore(night))
-        out.println("<h2>Добрый вечер, Яна. Сейчас "+now.format(DateTimeFormatter.ofPattern("HH:mm")));
+        out.println("<h2>Добрый вечер, Яна, сейчас "+resultTime);
     else
-        out.println("<h2>Доброй ночи, Яна. Сейчас "+now.format(DateTimeFormatter.ofPattern("HH:mm")));
+        out.println("<h2>Доброй ночи, Яна, сейчас "+resultTime);
 %>
 <%  LocalDate now2=LocalDate.now();
     LocalDate tomorrow = LocalDate.now().plusDays(1);

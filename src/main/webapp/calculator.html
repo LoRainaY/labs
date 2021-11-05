@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<center>
+    <table bgcolor="gold" align="center">
+        <td>
+            <form action="servletcalc" method="POST" >
+                <fieldset>
+                    <p><center><font color="red" size="5"><b>Калькулятор</b></font></center></p>
+                    <table>
+                        <td>
+                            <input name="first" /> - Первое число<br/><br/>
+                            <input name="second"/> - Второе число<br/> <br/>
+                                <p><input type="radio" name="op" value="+" checked/>+
+                                <input type="radio" name="op" value="-" />-
+                                <input type="radio" name="op" value="*" />*
+                                <input type="radio" name="op" value="/"/>/</p>
+                            <p><center><input type="submit" value="Рассчитать" ></center></p>
+                        </td>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </table>
+</center>
+</body>
+</html>
