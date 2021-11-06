@@ -49,6 +49,10 @@
     DayOfWeek dayOfWeek5 = tomorrow3.getDayOfWeek();
     DayOfWeek dayOfWeek6 = tomorrow4.getDayOfWeek();
     DayOfWeek dayOfWeek7 = tomorrow5.getDayOfWeek();
+
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+
 %>
  <%! String getDayOfWeek(DayOfWeek dayOfWeek){
         switch (dayOfWeek){
@@ -74,31 +78,31 @@
         <th>Номер дня недели</th>
     </tr>
     <tr>
-        <td><%out.println(now2.toString());%> </td>
+        <td><%out.println(now2.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek1));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow.toString());%> </td>
+        <td><%out.println(tomorrow.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek2));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow1.toString());%> </td>
+        <td><%out.println(tomorrow1.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek3));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow2.toString());%> </td>
+        <td><%out.println(tomorrow2.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek4));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow3.toString());%> </td>
+        <td><%out.println(tomorrow3.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek5));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow4.toString());%> </td>
+        <td><%out.println(tomorrow4.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek6));%></td>
     </tr>
     <tr>
-        <td><%out.println(tomorrow5.toString());%> </td>
+        <td><%out.println(tomorrow5.format(myFormatObj));%> </td>
         <td><%out.println(getDayOfWeek(dayOfWeek7));%></td>
     </tr>
 </table>
