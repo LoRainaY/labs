@@ -10,6 +10,9 @@
   Time: 18:10
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -17,6 +20,15 @@
     <title>Таблица с днями недели</title>
 </head>
 <body>
+<h3>Проверка библиотеки JSTL:</h3>
+<c:set var="date" value="<%=new java.util.Date()%>" />
+<p><b>Date and Time in Belarusian Standard Time(IST) Zone:</b>
+    <fmt:formatDate value="${date}" type="both" timeStyle="long" dateStyle="long" /></p>
+<fmt:setTimeZone value="GMT+2" />
+<p><b>Date and Time in GMT+2 time Zone: </b>
+    <fmt:formatDate value="${date}" type="both" timeStyle="long" dateStyle="long" /></p>
+
+<h3>Проверка использования Скриплетов:</h3>
 </h1><%
 
     LocalTime now = LocalTime.now();
@@ -50,7 +62,7 @@
     DayOfWeek dayOfWeek6 = tomorrow4.getDayOfWeek();
     DayOfWeek dayOfWeek7 = tomorrow5.getDayOfWeek();
 
-    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
 
 %>
